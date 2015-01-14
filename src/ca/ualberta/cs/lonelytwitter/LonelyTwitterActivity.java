@@ -20,7 +20,7 @@ import android.widget.ListView;
 
 public class LonelyTwitterActivity extends Activity {
 
-	private static final String FILENAME = "file.sav";
+	private static final String FILENAME = "file.sav"; // Allcap final attributes for convention
 	private EditText bodyText;
 	private ListView oldTweetsList;
 	
@@ -49,6 +49,18 @@ public class LonelyTwitterActivity extends Activity {
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
+		
+		User u = new Author("joe"); // it's acceptable to have User on the left side and Author on the right side.
+		try {
+			u.setName("joe2");
+		} catch (IOException e){
+			// some code that tells the user to use a shorter name
+			e.printStackTrace();
+		}
+		
+		ArrayList<User> x = new ArrayList<User>();
+		
+		
 		super.onStart();
 		String[] tweets = loadFromFile();
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
