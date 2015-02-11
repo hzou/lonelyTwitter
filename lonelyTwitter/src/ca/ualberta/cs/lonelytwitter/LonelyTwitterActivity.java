@@ -43,6 +43,7 @@ public class LonelyTwitterActivity extends Activity {
 				NormalTweetModel tweet = new NormalTweetModel(text);
 				saveInFile(tweet);
 				tweets.add(tweet);
+				bodyText.setText(null);
 				adapter.notifyDataSetChanged();
 			}
 		});
